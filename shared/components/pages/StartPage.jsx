@@ -64,7 +64,6 @@ export default class App extends Component {
                         createdPoll
                         ?
                             <div className='StartPage__poll-created'>
-                                <h2 className='StartPage__congrats'>{l('Poll is ready!')}</h2>
                                 <TextField
                                     className='StartPage__input'
                                     value={createdPoll.link}
