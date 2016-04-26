@@ -63,8 +63,6 @@ export default class ApiClient {
             init.body = JSON.stringify(body);
         }
 
-        console.log(init);
-
         return fetch(`${this.prefix}/${urlWithQuery}`, init).then(res => {
             if (res.status >= 400) {
                 throw new Error('Bad response from server');

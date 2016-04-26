@@ -17,72 +17,22 @@ export function fetchComponentsData(dispatch, components, params, query) {
     return Promise.all(promises);
 }
 
-export function getMetaDataFromState({ route, state, lang = 'en', params = {}, query = {} }) {
-    if (route === '/activations/:id') {
-        const { name, message, pictureURL } = state.currentActivation.activation;
+export function getMetaDataFromState({ route, state }) {
+    if (route === '/polls/:id') {
+        const { question } = state.openedPoll.question;
 
         return {
-            title       : name,
-            siteName    : "It's quiz",
-            image       : pictureURL ? pictureURL.replace('svg', 'png') : '',
-            description : message
+            title       : question,
+            siteName    : "Poller",
+            description : 'Vote for this question!'
         };
-    }
-
-    if (route === '/result/:id/:userId' && state.currentActivation.activation) {
-        const sharePhrases = {
-            ru: 'Я сдал тест "{name}" на {score}%',
-            uk: 'Я склав тест "{name}" на {score}%',
-            en: 'I have passed test "{name}" and gained {score}%'
-        };
-
-        const { name, pictureURL, message, userQuizSession } = state.currentActivation.activation;
-
-        return {
-            title       : strformat(sharePhrases[lang], { name, score: userQuizSession.score }),
-            siteName    : "It's quiz",
-            image       : pictureURL ? pictureURL.replace('svg', 'png') : '',
-            description : message
-        };
-    }
-
-    if (route === '/share/:key') {
-        const { customShareInfo } = clientConfig;
-        const { key } = params;
-
-        if (key && customShareInfo && customShareInfo[key]) {
-            const { title, pictureURL, description } = customShareInfo[key];
-
-            return {
-                title       : strformat(title, query),
-                siteName    : 'It\'s quiz',
-                image       : pictureURL,
-                description : strformat(description, query)
-            };
-        }
-    }
-
-    if (route === '/promo/:key') {
-        const { promos } = clientConfig;
-        const { key } = params;
-
-        if (key && promos && promos[key]) {
-            const { title, image, description } = promos[key];
-
-            return {
-                image,
-                title,
-                description,
-                siteName : 'It\'s quiz'
-            };
-        }
     }
 
     return {
-        title       : 'Quiz Wall',
-        siteName    : 'It\'s quiz',
-        image       : 'http://app.itsquiz.com/be/static/images/logo.png',
-        description : 'Discover tons of different vacancies, tests, quizzes, questionnaires and more...'
+        title       : 'Poller - polls made easy',
+        siteName    : 'Poller',
+        image       : 'http://www.cwfa.org/wp-content/uploads/2015/04/poll-box.png',
+        description : 'Create an amazing poll!'
     };
 }
 

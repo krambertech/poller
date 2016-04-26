@@ -1,4 +1,4 @@
-import { gaTrackingCode } from '../config.js';
+import { gaTrackingCode } from '../config';
 
 export function initialize() {
     ga('create', gaTrackingCode, 'auto');
