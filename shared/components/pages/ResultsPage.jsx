@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { sprintf } from '../../utils';
+
 import Button from '../Button.jsx';
 
 if (process.env.BROWSER) {
@@ -12,10 +14,10 @@ export default class App extends Component {
     render() {
         const { poll, onCreatePoll } = this.props;
 
-        const { l } = this.context.i18n;
+        const { l, ngettext } = this.context.i18n;
 
         if (!poll) {
-            return <div>Loading...</div>;
+            return <div>{l('Loading...')}</div>;
         }
 
         return (
@@ -31,7 +33,14 @@ export default class App extends Component {
                                     {option}
                                 </div>
                                 <div className='ResultsPage__option-result'>
-                                    {poll.results[idx]}
+                                    {sprintf(
+                                        ngettext(
+                                            '%d vote',
+                                            '%d votes',
+                                            poll.results[idx]
+                                        ),
+                                        poll.results[idx]
+                                    )}
                                 </div>
                             </li>
                         )

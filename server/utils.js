@@ -1,6 +1,5 @@
 import Promise     from 'bluebird';
 import geoip       from 'geoip-lite';
-import strformat   from 'strformat';
 
 import clientConfig            from '../etc/client-config.json';
 import { getSupportedLocales } from '../shared/utils';
@@ -19,11 +18,11 @@ export function fetchComponentsData(dispatch, components, params, query) {
 
 export function getMetaDataFromState({ route, state }) {
     if (route === '/polls/:id') {
-        const { question } = state.openedPoll.question;
+        const { question } = state.openedPoll.poll.question;
 
         return {
             title       : question,
-            siteName    : "Poller",
+            siteName    : 'Poller',
             description : 'Vote for this question!'
         };
     }
@@ -43,13 +42,6 @@ export function makeRedirectUrl({ originalUrl }) {
 }
 
 export function detectLocale(req) {
-    // Take locale passed by user
-    const passedLocale = (req.query.locale || req.cookies.locale || '').toLowerCase();
-
-    if (getSupportedLocales().indexOf(passedLocale) >= 0) {
-        return passedLocale;
-    }
-
     // Detect locale by ip
     const ip = req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || req.connection.remoteAddress;
     const geo = geoip.lookup(ip);
