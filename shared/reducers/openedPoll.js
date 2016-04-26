@@ -1,36 +1,36 @@
 import * as apiResponseFormatter from '../utils/apiResponseFormatter';
 
 import {
-    CREATE_POLL_SUCCESS,
-    CREATE_POLL_FAIL,
-    CREATE_POLL_REQUEST
+    LOAD_POLL_REQUEST,
+    LOAD_POLL_SUCCESS,
+    LOAD_POLL_FAIL
 } from '../actions/polls';
 
-const DEFAULT_STATE = { createdPoll: null, isLoading: false, error: null };
+const DEFAULT_STATE = { poll: null, error: null };
 
-export default function createPoll(state = DEFAULT_STATE, action) {
+export default function openedPoll(state = DEFAULT_STATE, action) {
     switch (action.type) {
-        case CREATE_POLL_REQUEST: {
+        case LOAD_POLL_REQUEST: {
             return {
                 ...state,
                 isLoading: true
             };
         }
 
-        case CREATE_POLL_SUCCESS: {
+        case LOAD_POLL_SUCCESS: {
             return {
                 ...state,
                 error: null,
-                createdPoll: action.createdPoll,
+                poll: action.poll,
                 isLoading: false
             };
         }
 
-        case CREATE_POLL_FAIL: {
+        case LOAD_POLL_FAIL: {
             return {
                 ...state,
                 error: action.error,
-                createdPoll: null,
+                poll: null,
                 isLoading: false
             };
         }

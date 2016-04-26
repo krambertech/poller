@@ -1,14 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 
-import TextArea from '../TextArea.jsx';
-import TextField from '../TextField.jsx';
 import Button from '../Button.jsx';
 
 if (process.env.BROWSER) {
     require('./PollPage.less');
 }
 
-export default class App extends Component {
+export default class PollPage extends Component {
     static propTypes = {
         location : PropTypes.object,
         routes   : PropTypes.array,
@@ -16,11 +14,20 @@ export default class App extends Component {
         history  : PropTypes.object
     };
 
+    handleVote(idx) {
+        const { onVote } = this.props;
+
+        if (onVote) {
+            onVote(idx);
+        }
+    }
+
     render() {
-        const  poll = {
-            question: 'What is the best movie ever?',
-            options: ['1', '2', '3']
-        };
+        const { poll } = this.props;
+
+        if (!poll) {
+            return <div>Loading...</div>;
+        }
 
         return (
             <div className='PollPage'>
@@ -36,6 +43,7 @@ export default class App extends Component {
                                     name='PollPage'
                                     id={`PollPage__${idx}`}
                                     value={idx}
+                                    onChange={this.handleVote.bind(this, idx)}
                                 />
                                 <label htmlFor={`PollPage__${idx}`}>
                                     {option}

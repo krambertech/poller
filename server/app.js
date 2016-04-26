@@ -55,6 +55,8 @@ app.use('/static', express.static('public/static'));
 app.use(cookieParser());
 
 app.use((req, res) => {
+    console.log('********* redirects go here', req.url);
+
     const locale = detectLocale(req);
     const store = configureStore();
 

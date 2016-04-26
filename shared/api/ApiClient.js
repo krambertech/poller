@@ -33,6 +33,7 @@ export default class ApiClient {
     }
 
     post(requestUrl, payload = {}) {
+        console.log('post', payload);
         return this.request({
             url: requestUrl,
             method: 'post',
@@ -48,12 +49,6 @@ export default class ApiClient {
     }
 
     request({ url, method, params = {}, body }) {
-        if (this.authToken) {
-            /* eslint-disable */
-            params.token = this.authToken;
-            /* eslint-enable */
-        }
-
         const urlWithQuery = `${url}?${queryString.stringify(params)}`;
 
         const init = {
@@ -65,8 +60,10 @@ export default class ApiClient {
         };
 
         if (method !== 'get' && method !== 'head') {
-            init.body = body;
+            init.body = JSON.stringify(body);
         }
+
+        console.log(init);
 
         return fetch(`${this.prefix}/${urlWithQuery}`, init).then(res => {
             if (res.status >= 400) {
@@ -75,15 +72,13 @@ export default class ApiClient {
 
             return res.json();
         }).then(data => {
+            console.log('then', data);
+
             if (data && data.status === 1) {
                 return data;
             }
 
             return Promise.reject(data.error);
         });
-    }
-
-    setAuthToken(authToken) {
-        this.authToken = authToken;
     }
 }

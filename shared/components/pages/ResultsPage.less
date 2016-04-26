@@ -1,51 +1,38 @@
-.StartPage {
-
-}
-
-.StartPage__hero {
-    width: 100%;
-    min-height: 300px;
-    background-color: #444444;
+.ResultsPage {
     padding: 24px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.StartPage__heading {
-    color: #fafafa;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: lighter;
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.StartPage__description {
-    color: #fafafa;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: lighter;
+.ResultsPage__question {
     text-align: center;
 }
 
-.StartPage__create-poll {
-    width: 100%;
-}
-
-.StartPage__logo {
-    width: 100px;
-}
-
-.StartPage__create-poll-form {
+.ResultsPage__options {
+    list-style: none;
+    height: 100%;
     width: 500px;
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 24px;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
 }
 
-.StartPage__input {
+.ResultsPage__option {
+    color: #404040;
     width: 100%;
+    height: 100px;
+    font-size: 20px;
+    display: flex;
+}
+
+.ResultsPage__option-text {
+    font-weight: thin;
+    padding: 16px;
+}
+
+.ResultsPage__option-result {
+    font-weight: bold;
+    padding: 16px;
 }

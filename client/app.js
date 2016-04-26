@@ -9,6 +9,7 @@ import cookie from 'cookie';
 
 import configureStore from '../shared/store/configureStore';
 import routes from '../shared/routes.jsx';
+import history from '../shared/history.js';
 import i18n from '../shared/i18n';
 
 const initialState = window.__INITIAL_STATE__ || {};
@@ -27,7 +28,7 @@ fetch(`/static/lang/${locale}.json`).then(res => {
     ReactDOM.render(
         <Provider store={store}>
             <i18n.Provider i18n={i18nTools}>
-                <Router children={routes} />
+                <Router children={routes} history={history} />
             </i18n.Provider>
         </Provider>,
 

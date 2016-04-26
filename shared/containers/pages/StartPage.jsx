@@ -20,21 +20,24 @@ export default class StartPageContainer extends Component {
     }
 
     render() {
-        console.log('this.props', this.props);
+        const { isLoading, createdPoll, error } = this.props;
 
         return (
             <StartPage
+                createdPoll={createdPoll}
+                isLoading={isLoading}
+                error={error}
                 onPollCreate={this.handleCreatePoll.bind(this)}
             />
         );
     }
 }
 
-function mapStateToProps({ }) {
-    console.log('mapStateToProps');
-
+function mapStateToProps({ createPoll }) {
     return {
-        'gggg': 33333
+        isLoading: createPoll.isLoading,
+        createdPoll: createPoll.createdPoll,
+        error: createPoll.error
     };
 }
 

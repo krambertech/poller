@@ -17,29 +17,29 @@ export default class App extends Component {
     };
 
     render() {
-        const  poll = {
-            question: 'What is the best movie ever?',
-            options: ['1', '2', '3']
-        };
+        const { poll } = this.props;
+
+        if (!poll) {
+            return <div>Loading...</div>;
+        }
+
+        console.log(poll);
 
         return (
             <div className='ResultsPage'>
-                <div className='ResultsPage__question'>
+                <h2 className='ResultsPage__question'>
                     {poll.question}
-                </div>
+                </h2>
                 <ul className='ResultsPage__options'>
                     {
                         poll.options.map((option, idx) =>
-                            <li key={idx}>
-                                <input
-                                    type='radio'
-                                    name='PollPage'
-                                    id={`PollPage__${idx}`}
-                                    value={idx}
-                                />
-                                <label htmlFor={`PollPage__${idx}`}>
+                            <li className='ResultsPage__option' key={idx}>
+                                <div className='ResultsPage__option-text'>
                                     {option}
-                                </label>
+                                </div>
+                                <div className='ResultsPage__option-result'>
+                                    {poll.results[idx]}
+                                </div>
                             </li>
                         )
                     }

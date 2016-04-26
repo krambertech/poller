@@ -16,6 +16,10 @@ export function createPoll(pollData) {
     console.log('createPoll !!!!!!');
 
     return dispatch => {
+        dispatch({
+            type: CREATE_POLL_REQUEST
+        });
+
         return api.polls.create(pollData).then(data =>
             dispatch({
                 createdPoll: data,
@@ -25,10 +29,32 @@ export function createPoll(pollData) {
     };
 }
 
-export function loadPoll(params = {}, query = {}) {
+export function loadPoll(params = {}) {
+    return dispatch => {
+        dispatch({
+            type: LOAD_POLL_REQUEST
+        });
 
+        return api.polls.show(params.id).then(data =>
+            dispatch({
+                poll: data,
+                type: LOAD_POLL_SUCCESS
+            })
+        );
+    };
 }
 
 export function loadPollResults(params = {}, query = {}) {
+    return dispatch => {
+        dispatch({
+            type: LOAD_POLL_RESULTS_REQUEST
+        });
 
+        return api.polls.results(params.id).then(data =>
+            dispatch({
+                poll: data,
+                type: LOAD_POLL_RESULTS_SUCCESS
+            })
+        );
+    };
 }

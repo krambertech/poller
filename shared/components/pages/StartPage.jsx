@@ -10,10 +10,8 @@ if (process.env.BROWSER) {
 
 export default class App extends Component {
     static propTypes = {
-        location : PropTypes.object,
-        routes   : PropTypes.array,
-        children : PropTypes.object,
-        history  : PropTypes.object
+        createdPoll   : PropTypes.object,
+        onPollCreate  : PropTypes.func
     };
 
     state = {
@@ -31,15 +29,13 @@ export default class App extends Component {
         });
     }
 
-    handleQuestionChange(idx, e) {
+    handleQuestionChange(e) {
         this.setState({
             question: e.target.value
         });
     }
 
     handlePollCreate() {
-        console.log('handlePollCreate VVVV', this);
-
         const { onPollCreate } = this.props;
 
         if (onPollCreate) {
@@ -52,6 +48,7 @@ export default class App extends Component {
 
     render() {
         const { question, options } = this.state;
+        const { createdPoll } = this.props;
 
         return (
             <div className='StartPage'>
@@ -61,24 +58,40 @@ export default class App extends Component {
                     <h4 className='StartPage__description'>Polls made easy</h4>
                 </div>
                 <div className='StartPage__create-poll'>
-                    <form className='StartPage__create-poll-form'>
-                        <TextArea
-                            className='StartPage__input'
-                            rows={4}
-                            value={question}
-                        />
-                        {
-                            options.map((option, idx) =>
+                    {
+                        createdPoll
+                        ?
+                            <div className='StartPage__poll-created'>
+                                <h2 className='StartPage__congrats'>Poll is ready!</h2>
                                 <TextField
                                     className='StartPage__input'
-                                    onChange={this.handleOptionChange.bind(this, idx)}
-                                    value={option}
+                                    value={`http://localhost:3001/#/polls/${createdPoll._id}`}
                                 />
-                            )
-                        }
+                                <p> Share this link with friends</p>
+                            </div>
+                        :
+                            <form className='StartPage__create-poll-form'>
+                                <TextArea
+                                    className='StartPage__input'
+                                    rows={4}
+                                    value={question}
+                                    placeholder='What movie to watch on weekend?'
+                                    onChange={this.handleQuestionChange.bind(this)}
+                                />
+                                {
+                                    options.map((option, idx) =>
+                                        <TextField
+                                            className='StartPage__input'
+                                            placeholder={`Option ${idx + 1}`}
+                                            onChange={this.handleOptionChange.bind(this, idx)}
+                                            value={option}
+                                        />
+                                    )
+                                }
 
-                        <Button onClick={this.handlePollCreate.bind(this)}>Start!</Button>
-                    </form>
+                                <Button onClick={this.handlePollCreate.bind(this)}>Start!</Button>
+                            </form>
+                    }
                 </div>
             </div>
         );
