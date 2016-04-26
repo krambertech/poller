@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-26 16:42+0300\n"
+"POT-Creation-Date: 2016-04-26 20:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/PollPage.js:57
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/ResultsPage.js:55
 msgid "Loading..."
 msgstr ""
 
 #: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/ResultsPage.js:86
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/ResultsPage.js:90
 msgid "Create poll like this!"
 msgstr ""
 
@@ -53,5 +55,12 @@ msgstr[1] ""
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/ResultsPage.js:82
+#, javascript-format
+msgid "%d vote"
+msgid_plural "%d votes"
 msgstr[0] ""
 msgstr[1] ""

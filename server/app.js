@@ -21,11 +21,11 @@ import i18n           from '../shared/i18n';
 
 import clientConfig from '../etc/client-config.json';
 
+import api from './api';
+
 // Initializе localization
 import ruLocaleData from '../public/static/lang/ru.json';
 import enLocaleData from '../public/static/lang/en.json';
-
-import api from './api';
 
 const i18nToolsRegistry = {
     ru : new i18n.Tools({ localeData: ruLocaleData, locale: 'ru' }),
@@ -55,7 +55,7 @@ app.use('/static', express.static('public/static'));
 app.use(cookieParser());
 
 app.use((req, res) => {
-    const locale = detectLocale(req);
+    const locale = 'ru';
     const store = configureStore();
 
     const i18nTools = i18nToolsRegistry[locale];

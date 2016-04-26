@@ -13,7 +13,7 @@ export default class App extends Component {
 
     state = {
         question: '',
-        options: ['', '']
+        options: ['', '', '']
     };
 
     handleOptionChange(idx, e) {
