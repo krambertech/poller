@@ -1,4 +1,4 @@
-import * as apiResponseFormatter from '../utils/apiResponseFormatter';
+import { formatVote } from '../utils/apiResponseFormatter';
 
 import {
     CREATE_VOTE_SUCCESS,
@@ -21,7 +21,7 @@ export default function createPoll(state = DEFAULT_STATE, action) {
             return {
                 ...state,
                 error: null,
-                createdVote: action.createdVote
+                createdVote: formatVote(action.createdVote)
             };
         }
 

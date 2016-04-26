@@ -9,6 +9,8 @@ if (process.env.BROWSER) {
 }
 
 export default class App extends Component {
+    static contextTypes = { i18n: React.PropTypes.object };
+
     state = {
         question: '',
         options: ['', '']
@@ -43,26 +45,29 @@ export default class App extends Component {
 
     render() {
         const { question, options } = this.state;
+
         const { createdPoll } = this.props;
+
+        const { l } = this.context.i18n;
 
         return (
             <div className='StartPage'>
                 <div className='StartPage__hero'>
                     <img src='/static/images/sunglasses.svg' className='StartPage__logo' />
-                    <h1 className='StartPage__heading'>Poller</h1>
-                    <h4 className='StartPage__description'>Polls made easy</h4>
+                    <h1 className='StartPage__heading'>{l('Poller')}</h1>
+                    <h4 className='StartPage__description'>{l('Polls made easy')}</h4>
                 </div>
                 <div className='StartPage__create-poll'>
                     {
                         createdPoll
                         ?
                             <div className='StartPage__poll-created'>
-                                <h2 className='StartPage__congrats'>Poll is ready!</h2>
+                                <h2 className='StartPage__congrats'>{l('Poll is ready!')}</h2>
                                 <TextField
                                     className='StartPage__input'
-                                    value={`http://localhost:3001/#/polls/${createdPoll._id}`}
+                                    value={createdPoll.link}
                                 />
-                                <p> Share this link with friends</p>
+                                <p>{l('Share this link with friends')}</p>
                             </div>
                         :
                             <form className='StartPage__create-poll-form'>
@@ -70,7 +75,7 @@ export default class App extends Component {
                                     className='StartPage__input'
                                     rows={4}
                                     value={question}
-                                    placeholder='What movie to watch on weekend?'
+                                    placeholder={l('What movie to watch on weekend?')}
                                     onChange={this.handleQuestionChange.bind(this)}
                                 />
                                 {

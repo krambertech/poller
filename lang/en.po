@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-10 22:20+0200\n"
+"POT-Creation-Date: 2016-04-26 16:16+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,6 +133,7 @@ msgstr ""
 #: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/i18n/Tools.js:49
 #: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/i18n/Tools.js:53
 #: /home/cobaimelan/chunk/itsquiz-wall/bin/../src_es5/i18n/Tools.js:53
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/i18n/Tools.js:53
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
@@ -143,6 +144,7 @@ msgstr[1] ""
 #: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/i18n/Tools.js:52
 #: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/i18n/Tools.js:56
 #: /home/cobaimelan/chunk/itsquiz-wall/bin/../src_es5/i18n/Tools.js:56
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/i18n/Tools.js:56
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
@@ -751,4 +753,32 @@ msgstr ""
 #: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/ExpandableText.js:89
 #: /home/cobaimelan/chunk/itsquiz-wall/bin/../src_es5/components/ExpandableText.js:89
 msgid "Expand"
+msgstr ""
+
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/PollPage.js:57
+msgid "Loading..."
+msgstr ""
+
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/ResultsPage.js:86
+msgid "Create poll like this!"
+msgstr ""
+
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/StartPage.js:110
+msgid "Poller"
+msgstr ""
+
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/StartPage.js:115
+msgid "Polls made easy"
+msgstr ""
+
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/StartPage.js:127
+msgid "Poll is ready!"
+msgstr ""
+
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/StartPage.js:136
+msgid "Share this link with friends"
+msgstr ""
+
+#: /Users/katerynaporshnieva/Projects/itsquiz/itsquiz-poll/bin/../src_es5/components/pages/StartPage.js:145
+msgid "What movie to watch on weekend?"
 msgstr ""

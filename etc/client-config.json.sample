@@ -1,3 +1,5 @@
 {
-    "apiPrefix": "http://localhost:3001/api/v1"
+    "apiPrefix": "http://localhost:3001/api/v1",
+    "staticUrl": "http://localhost:8050",
+    "appRootUrl": "http://localhost:3001"
 }

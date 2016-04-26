@@ -1,4 +1,4 @@
-import * as apiResponseFormatter from '../utils/apiResponseFormatter';
+import { formatPollResults } from '../utils/apiResponseFormatter';
 
 import {
     LOAD_POLL_RESULTS_REQUEST,
@@ -21,7 +21,7 @@ export default function pollResults(state = DEFAULT_STATE, action) {
             return {
                 ...state,
                 error: null,
-                poll: action.poll,
+                poll: formatPollResults(action.poll),
                 isLoading: false
             };
         }

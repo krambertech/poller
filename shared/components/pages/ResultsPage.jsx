@@ -7,8 +7,12 @@ if (process.env.BROWSER) {
 }
 
 export default class App extends Component {
+    static contextTypes = { i18n: React.PropTypes.object };
+
     render() {
         const { poll, onCreatePoll } = this.props;
+
+        const { l } = this.context.i18n;
 
         if (!poll) {
             return <div>Loading...</div>;
@@ -33,7 +37,7 @@ export default class App extends Component {
                         )
                     }
                 </ul>
-                <Button onClick={onCreatePoll}>Create poll like this!</Button>
+                <Button onClick={onCreatePoll}>{l('Create poll like this!')}</Button>
             </div>
         );
     }

@@ -5,6 +5,8 @@ if (process.env.BROWSER) {
 }
 
 export default class PollPage extends Component {
+    static contextTypes = { i18n: React.PropTypes.object };
+
     handleVote(idx) {
         const { onVote } = this.props;
 
@@ -16,8 +18,10 @@ export default class PollPage extends Component {
     render() {
         const { poll } = this.props;
 
+        const { l } = this.context.i18n;
+
         if (!poll) {
-            return <div>Loading...</div>;
+            return <div>{l('Loading...')}</div>;
         }
 
         return (

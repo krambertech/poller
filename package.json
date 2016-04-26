@@ -20,6 +20,7 @@
     "stop": "NODE_ENV='production' pm2 delete itsquiz-wall -s &> /dev/null"
   },
   "dependencies": {
+    "babel-cli": "^6.7.7",
     "babel-polyfill": "^6.7.2",
     "bluebird": "^3.0.5",
     "body-parser": "^1.15.0",
@@ -53,6 +54,7 @@
   },
   "devDependencies": {
     "autoprefixer-loader": "*",
+    "babel": "^6.5.2",
     "babel-core": "^6.7.7",
     "babel-eslint": "^5.0.0",
     "babel-loader": "^6.2.4",
