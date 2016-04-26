@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 import TextArea from '../TextArea.jsx';
 import TextField from '../TextField.jsx';
@@ -9,11 +9,6 @@ if (process.env.BROWSER) {
 }
 
 export default class App extends Component {
-    static propTypes = {
-        createdPoll   : PropTypes.object,
-        onPollCreate  : PropTypes.func
-    };
-
     state = {
         question: '',
         options: ['', '']
@@ -81,6 +76,7 @@ export default class App extends Component {
                                 {
                                     options.map((option, idx) =>
                                         <TextField
+                                            key={idx}
                                             className='StartPage__input'
                                             placeholder={`Option ${idx + 1}`}
                                             onChange={this.handleOptionChange.bind(this, idx)}

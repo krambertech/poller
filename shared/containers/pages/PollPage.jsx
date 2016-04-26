@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect }                     from 'react-redux';
 import { bindActionCreators }          from 'redux';
 
@@ -10,13 +10,6 @@ import { createVote } from '../../actions/votes';
 import connectDataFetchers from '../../lib/connectDataFetchers.jsx';
 
 class PollPageContainer extends Component {
-    static propTypes = {
-        location : PropTypes.object,
-        routes   : PropTypes.array,
-        children : PropTypes.object,
-        history  : PropTypes.object
-    };
-
     handleVote(index) {
         this.props.createVote({
             pollId: this.props.params.id,

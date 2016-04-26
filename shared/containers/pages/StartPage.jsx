@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect }                     from 'react-redux';
 import { bindActionCreators }          from 'redux';
 
@@ -7,13 +7,6 @@ import { createPoll } from '../../actions/polls';
 import StartPage from '../../components/pages/StartPage.jsx';
 
 export default class StartPageContainer extends Component {
-    static propTypes = {
-        location : PropTypes.object,
-        routes   : PropTypes.array,
-        children : PropTypes.object,
-        history  : PropTypes.object
-    };
-
     handleCreatePoll(pollData) {
         console.log('handleCreatePoll', pollData);
         this.props.createPoll(pollData);
@@ -33,11 +26,11 @@ export default class StartPageContainer extends Component {
     }
 }
 
-function mapStateToProps({ createPoll }) {
+function mapStateToProps(state) {
     return {
-        isLoading: createPoll.isLoading,
-        createdPoll: createPoll.createdPoll,
-        error: createPoll.error
+        isLoading: state.createPoll.isLoading,
+        createdPoll: state.createPoll.createdPoll,
+        error: state.createPoll.error
     };
 }
 

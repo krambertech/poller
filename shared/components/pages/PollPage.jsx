@@ -1,19 +1,10 @@
-import React, { Component, PropTypes } from 'react';
-
-import Button from '../Button.jsx';
+import React, { Component } from 'react';
 
 if (process.env.BROWSER) {
     require('./PollPage.less');
 }
 
 export default class PollPage extends Component {
-    static propTypes = {
-        location : PropTypes.object,
-        routes   : PropTypes.array,
-        children : PropTypes.object,
-        history  : PropTypes.object
-    };
-
     handleVote(idx) {
         const { onVote } = this.props;
 

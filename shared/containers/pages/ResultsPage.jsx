@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect }                     from 'react-redux';
 import { bindActionCreators }          from 'redux';
 
@@ -9,15 +9,8 @@ import { loadPollResults } from '../../actions/polls';
 import connectDataFetchers from '../../lib/connectDataFetchers.jsx';
 
 class ResultsPageContainer extends Component {
-    static propTypes = {
-        location : PropTypes.object,
-        routes   : PropTypes.array,
-        children : PropTypes.object,
-        history  : PropTypes.object
-    };
-
     handleCreatePoll() {
-        this.props.history.pushState(null, '/')
+        this.props.history.pushState(null, '/');
     }
 
     render() {

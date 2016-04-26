@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import cx from 'classnames';
 
 if (process.env.BROWSER) {
@@ -6,13 +6,6 @@ if (process.env.BROWSER) {
 }
 
 export default class TextArea extends Component {
-    static propTypes = {
-        location : PropTypes.object,
-        routes   : PropTypes.array,
-        children : PropTypes.object,
-        history  : PropTypes.object
-    };
-
     render() {
         const { className, ...otherProps } = this.props;
 

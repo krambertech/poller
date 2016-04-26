@@ -13,8 +13,6 @@ export const LOAD_POLL_RESULTS_SUCCESS = 'LOAD_POLL_RESULTS_SUCCESS';
 export const LOAD_POLL_RESULTS_FAIL    = 'LOAD_POLL_RESULTS_FAIL';
 
 export function createPoll(pollData) {
-    console.log('createPoll !!!!!!');
-
     return dispatch => {
         dispatch({
             type: CREATE_POLL_REQUEST
@@ -44,7 +42,7 @@ export function loadPoll(params = {}) {
     };
 }
 
-export function loadPollResults(params = {}, query = {}) {
+export function loadPollResults(params = {}) {
     return dispatch => {
         dispatch({
             type: LOAD_POLL_RESULTS_REQUEST

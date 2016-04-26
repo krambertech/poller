@@ -1,7 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
-import TextArea from '../TextArea.jsx';
-import TextField from '../TextField.jsx';
 import Button from '../Button.jsx';
 
 if (process.env.BROWSER) {
@@ -9,21 +7,12 @@ if (process.env.BROWSER) {
 }
 
 export default class App extends Component {
-    static propTypes = {
-        location : PropTypes.object,
-        routes   : PropTypes.array,
-        children : PropTypes.object,
-        history  : PropTypes.object
-    };
-
     render() {
-        const { poll } = this.props;
+        const { poll, onCreatePoll } = this.props;
 
         if (!poll) {
             return <div>Loading...</div>;
         }
-
-        console.log(poll);
 
         return (
             <div className='ResultsPage'>
@@ -44,6 +33,7 @@ export default class App extends Component {
                         )
                     }
                 </ul>
+                <Button onClick={onCreatePoll}>Create poll like this!</Button>
             </div>
         );
     }
