@@ -14,15 +14,15 @@ Free, easy, no registration needed real-time polls!
 
 ## Todos
 
-[] Redux dev Tools
-[] More UI tests
-[] Util for meta data
-[] Sockets for results in real-time
-[] Add markdown for questions and options
-[] Make better server architecture
-[] QR codes for sharing
-[] Add chart on Results Page
-[] Deploy 😀
+* [ ] Redux dev Tools
+* [ ] More UI tests
+* [ ] Util for meta data
+* [ ] Sockets for results in real-time
+* [ ] Add markdown for questions and options
+* [ ] Make better server architecture
+* [ ] QR codes for sharing
+* [ ] Add chart on Results Page
+* [ ] Deploy 😀
 
 ## Wanna contribute?
 
