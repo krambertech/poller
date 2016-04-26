@@ -8,7 +8,6 @@ import StartPage from '../../components/pages/StartPage.jsx';
 
 export default class StartPageContainer extends Component {
     handleCreatePoll(pollData) {
-        console.log('handleCreatePoll', pollData);
         this.props.createPoll(pollData);
     }
 
