@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { connect }                     from 'react-redux';
-import { bindActionCreators }          from 'redux';
+import { connect } from 'react-redux';
 
 import ResultsPage from '../../components/pages/ResultsPage.jsx';
 
@@ -26,12 +25,6 @@ class ResultsPageContainer extends Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        loadPollResults: bindActionCreators(loadPollResults, dispatch)
-    };
-}
-
 function mapStateToProps({ pollResults }) {
     return {
         poll: pollResults.poll,
@@ -40,6 +33,6 @@ function mapStateToProps({ pollResults }) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(
+export default connect(mapStateToProps)(
     connectDataFetchers(ResultsPageContainer, [ loadPollResults ])
 );

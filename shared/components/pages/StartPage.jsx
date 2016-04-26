@@ -32,7 +32,7 @@ export default class App extends Component {
         });
     }
 
-    handlePollCreate() {
+    handlePollCreate(e) {
         const { onPollCreate } = this.props;
 
         if (onPollCreate) {
@@ -41,6 +41,8 @@ export default class App extends Component {
                 options: this.state.options
             });
         }
+
+        e.preventDefault();
     }
 
     render() {

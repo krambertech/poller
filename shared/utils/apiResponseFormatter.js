@@ -5,7 +5,7 @@ export function formatPoll(poll) {
         id: poll._id,
         question: poll.question,
         options: poll.options,
-        link: `${appRootUrl}/${poll._id}`
+        link: `${appRootUrl}/polls/${poll._id}`
     };
 }
 
