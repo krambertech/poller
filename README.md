@@ -7,3 +7,5 @@ Isomorphic application "Poller"
 3. ```npm run nodemon```
 4. ```npm run webpack-devserver``` (in another terminal, and wait until build is ready)
 5. open http://localhost:3001
+
+**NOTE**: MongoDb needed. Install and run (`mongod`).
