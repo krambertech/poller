@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import TextArea from '../TextArea.jsx';
 import TextField from '../TextField.jsx';
 import Button from '../Button.jsx';
+import QRCode from '../QRCode.jsx';
 
 if (process.env.BROWSER) {
     require('./StartPage.less');
@@ -69,6 +70,7 @@ export default class App extends Component {
                                     value={createdPoll.link}
                                 />
                                 <p>{l('Share this link with friends')}</p>
+                                <QRCode value={createdPoll.link} />
                             </div>
                         :
                             <form className='StartPage__create-poll-form'>
