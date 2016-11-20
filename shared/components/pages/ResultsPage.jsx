@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { sprintf } from '../../utils';
 
+import Chart from 'react-chartjs';
+
 import Button from '../Button.jsx';
 
 if (process.env.BROWSER) {
@@ -10,6 +12,18 @@ if (process.env.BROWSER) {
 
 export default class App extends Component {
     static contextTypes = { i18n: React.PropTypes.object };
+
+    getRandomColor() {
+        const letters = '0123456789ABCDEF';
+
+        let color = '#';
+
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+
+        return color;
+    }
 
     render() {
         const { poll, onCreatePoll } = this.props;
@@ -20,8 +34,20 @@ export default class App extends Component {
             return <div>{l('Loading...')}</div>;
         }
 
+        const pollData = poll.options.map((option, idx) => ({
+            value: poll.results[idx],
+            color: this.getRandomColor(),
+            label: option
+        }));
+
         return (
             <div className='ResultsPage'>
+                <Chart.Pie
+                    data={pollData}
+                    width='300'
+                    height='300'
+                />
+
                 <h2 className='ResultsPage__question'>
                     {poll.question}
                 </h2>
