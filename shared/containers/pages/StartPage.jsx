@@ -6,7 +6,7 @@ import { createPoll } from '../../actions/polls';
 
 import StartPage from '../../components/pages/StartPage.jsx';
 
-export default class StartPageContainer extends Component {
+export class StartPageContainer extends Component {
     handleCreatePoll(pollData) {
         this.props.createPoll(pollData);
     }
