@@ -53,7 +53,9 @@
     "redux-logger": "^2.0.3",
     "redux-router": "^0.1.0",
     "redux-thunk": "^1.0.0",
-    "strformat": "0.0.7"
+    "strformat": "0.0.7",
+    "chart.js": "^1.1.1",
+    "react-chartjs": "^0.8.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "*",
