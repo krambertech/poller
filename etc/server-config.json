@@ -1,8 +1,0 @@
-{
-    "db": {
-        "port": 27017,
-        "host": "http://localhost",
-        "name": "poller",
-        "testName": "poller_test"
-    }
-}
