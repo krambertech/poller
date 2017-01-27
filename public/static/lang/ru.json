@@ -1,0 +1,45 @@
+{
+   "domain": "messages",
+   "locale_data": {
+      "messages": {
+         "": {
+            "domain": "messages",
+            "plural_forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+            "lang": "ru"
+         },
+         "Loading...": [
+            "Загрузка…"
+         ],
+         "Create poll like this!": [
+            "Создать такой опрос!"
+         ],
+         "Poller": [
+            ""
+         ],
+         "Polls made easy": [
+            "Опросы - как никогда проще!"
+         ],
+         "Share this link with friends": [
+            "Поделитесь этой ссылкой с друзьями"
+         ],
+         "What movie to watch on weekend?": [
+            "Какой фильм посмотрим на выходных?"
+         ],
+         "%d hour": [
+            "",
+            "%d hours",
+            "%d hours"
+         ],
+         "%d minute": [
+            "",
+            "%d minutes",
+            "%d minutes"
+         ],
+         "%d vote": [
+            "%d голос",
+            "%d голоса",
+            "%d голосов"
+         ]
+      }
+   }
+}
